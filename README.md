@@ -1,4 +1,4 @@
-# Docker - ThrustJS
+# Docker - ThrustJS [![Build Status](https://travis-ci.org/Thrustjs/thrust-docker.svg?branch=master)](https://travis-ci.org/Thrustjs/thrust-docker)
 
 Este repositório contém a receita oficial do Docker para a plataforma ThurstJS.
 
