@@ -1,24 +1,17 @@
 # Docker - ThrustJS
 
-Este repositório contém as receitas Docker para a plataforma ThurstJS.
-
-## Tags
-
-* lastest Última versão do Thrust na última versão do Java suportada.
-* oracle-8 Última versão do Thrust no último update do Java OpenJDK 8 com .
-* openjdk-8 Última versão do Thrust no último update do Java Oracle 8.
+Este repositório contém a receita oficial do Docker para a plataforma ThurstJS.
 
 ## Build
 
 ```bash
-cd openjdk-8 # ou cd oracle-8
 docker build -t thrust .
 ```
 
 ## Uso
 
 ```bash
-docker run --rm -it -v $(pwd):/app thrust nomearquivo.js
+docker run --rm -it -v $(pwd):/app -w /app thrust /bin/sh -c "thrust install && thrust startup.js"
 ```
 
 ## Exemplo
@@ -27,8 +20,8 @@ docker run --rm -it -v $(pwd):/app thrust nomearquivo.js
 ```bash
 mkdir exemplo
 cd exemplo
-echo "print('Ola Mundo!')" > main.js
-docker run --rm -it -v $(pwd):/app thrust main.js
+echo "print('Ola Mundo\!')" > main.js
+docker run --rm -it -v $(pwd):/app -w /app thrust /bin/sh -c "thrust main.js"
 ```
 ### Saída:
 ```bash
