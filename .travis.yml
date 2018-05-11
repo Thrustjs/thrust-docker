@@ -1,0 +1,17 @@
+language: bash 
+
+services:
+  - docker
+
+before_install:
+  - docker build -t thrust .
+  - mkdir test && echo "print('OK\!')" > test/main.js
+
+script: cd test && docker run --rm -it -v $(pwd):/app -w /app thrust /bin/sh -c "thrust main.js"
+
+deploy:
+  provider: releases
+  api_key: $githubToken
+  skip_cleanup: true
+  on:
+    tags: true
