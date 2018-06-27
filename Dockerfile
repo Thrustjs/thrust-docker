@@ -1,6 +1,6 @@
 FROM debian:latest
 
-ENV THRUST_VERSION 0.5.0
+ENV THRUST_VERSION 0.5.3
 
 ENV DEBIAN_FRONTEND noninteractive
 
